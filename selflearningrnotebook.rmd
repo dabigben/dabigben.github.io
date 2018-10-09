@@ -1,0 +1,28 @@
+library(tidyverse)
+
+ggplot2::mpg
+ggplot(data = mpg)+
+  geom_point(mapping=aes(x=displ,y=hwy))
+  
+
+library(tidyverse)
+  
+  
+```{r}
+tibble(
+  x=1:5,
+  y=1,
+  z= x^2+y
+)
+```
+
+```{r}
+tb<-tibble(
+  ';)'="smile",
+  ' '="space",
+  '2000'="number"
+)
+tb
+```
+
+  str(parse_logical(c("TRUE", "FALSE", "NA")))
