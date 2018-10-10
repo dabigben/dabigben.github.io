@@ -1,10 +1,49 @@
+  
+# This is me learning how to create a ggplot
+
 library(tidyverse)
 
 ggplot2::mpg
 ggplot(data = mpg)+
-  geom_point(mapping=aes(x=displ,y=hwy))
-  
+  geom_point(mapping=aes(x=displ,y=hwy, color=class,shape=drv))
+ 
+#This is the template for making graphs with ggplot  
+```{r}
+ggplot(data = <DATA>)+
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
 
+ggplot(data=mpg) 
+mpg  
+str(mpg$drv)
+?mpg
+ggplot(data = mpg)+
+  geom_point(mapping = aes(x=class,y=drv))
+  
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy),color = "blue")
+  
+  
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 3)  
+
+  
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_grid(drv~cyl)  
+  
+  
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ .)  
+  
+  
+  
+  
+  
+  
+# This is some other advanced stuff from class that i will come back to
 library(tidyverse)
   
   
@@ -16,6 +55,11 @@ tibble(
 )
 ```
 
+
+
+
+
+
 ```{r}
 tb<-tibble(
   ';)'="smile",
@@ -26,3 +70,6 @@ tb
 ```
 
   str(parse_logical(c("TRUE", "FALSE", "NA")))
+  
+
+
